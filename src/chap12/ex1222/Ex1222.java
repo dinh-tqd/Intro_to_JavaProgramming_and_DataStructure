@@ -17,6 +17,7 @@ public class Ex1222 {
 
         File[] files = dir.listFiles();
         for (File file : files) {
+            // If file name is John Connor + number.txt
             if (file.getName().matches("^JohnConnor_\\d+\\.txt$")) {
 
                 Scanner input = new Scanner(file);

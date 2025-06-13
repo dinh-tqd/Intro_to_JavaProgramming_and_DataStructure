@@ -14,7 +14,7 @@ public class Ex1016 {
                     || number.remainder(BigInteger.valueOf(3)).equals(BigInteger.ZERO);
 
             if (condition) {
-                System.out.println(number.toString());
+                System.out.println(number);
                 count++;
             }
 
