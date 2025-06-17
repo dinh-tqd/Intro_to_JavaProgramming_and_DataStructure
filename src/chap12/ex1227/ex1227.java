@@ -6,24 +6,37 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class ex1227 {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 //        createDirectory();
-        System.out.println("Enter the file name: ");
-        File file = new File("src/chap12/ex1227/myDir/" + args[0]);
 
+        File folder = new File("src/chap12/ex1227/myDir/");
+
+        if (args[0].length() > 0 && args[0].equals("*")) {
+            for (File file : folder.listFiles()) {
+                if (file.isFile())
+                    modifyFile(file);
+            }
+        } else {
+            File file = new File(folder.getAbsolutePath() + "/" + args[0]);
+            modifyFile(file);
+        }
+    }
+
+    public static void modifyFile(File file) throws Exception {
         Scanner input = new Scanner(file);
         StringBuilder sb = new StringBuilder();
+
         while (input.hasNextLine()) {
             String line = input.nextLine();
+            String[] words = line.split("\\s+");
+            for (String word : words) {
+                if (!word.matches("^exercise\\d+_\\d+$"))
+                    sb.append(word).append(" ");
+                else {
 
-            line = line.replaceAll("^Exercise([0-9])_([0-9])$", "Exercise0$1_0$2");
-            sb.append(line + "\n");
+                }
+            }
         }
-
-        PrintWriter out = new PrintWriter(file);
-        out.println(sb.toString());
-        out.close();
-
     }
 
     public static void createDirectory() throws IOException {
