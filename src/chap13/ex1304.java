@@ -5,10 +5,13 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class ex1304 {
+    public static final int TODAY_DATE = 18;
     public static void main(String[] args) {
+
+
         Calendar calendar = new GregorianCalendar();
-        calendar.set(Calendar.YEAR, 2019);
-        calendar.set(Calendar.MONTH, 9);
+        calendar.set(Calendar.YEAR, 2025);
+        calendar.set(Calendar.MONTH, 5);
         calendar.set(Calendar.DAY_OF_MONTH, 1);
         String[] monthString = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         System.out.println(monthString[9] + " " + 2019);
@@ -20,31 +23,42 @@ public class ex1304 {
 
         int elementCount = 1;
         int dayCount = 1;
-        int[][] days = new int[6][7];
+        DAY[][] days = new DAY[6][7];
 
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 7; j++) {
-                if (elementCount >= calendar.get(Calendar.DAY_OF_WEEK) && dayCount <= calendar.getActualMaximum(Calendar.DAY_OF_MONTH)) {
-                    days[i][j] = dayCount;
-                    dayCount++;
-                }
-                elementCount++;
-            }
-        }
+        System.out.println(calendar.get(Calendar.DAY_OF_MONTH));
+    }
+}
 
-        for (int row = 0; row < days.length; row++) {
-            for (int column = 0; column < days[0].length; column++) {
+class DAY {
+    public static final int MIN = 1;
+    public static final int MAX = 31;
 
-                if (days[row][column] == 0) {
-                    System.out.printf("%5s", "");
-                } else {
-                    System.out.printf("%5d", days[row][column]);
-                }
-                if (column == days[0].length - 1)
-                    System.out.println();
-            }
-        }
+    private int day = 1;
+    private boolean isPreviousMonth = false;
+    private boolean isNextMonth = false;
 
-        System.out.println(calendar.get(Calendar.DATE));
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        if (day >= MIN && day <= MAX)
+            this.day = day;
+    }
+
+    public void setIsPreviousMonth(boolean isPreviousMonth) {
+        this.isPreviousMonth = isPreviousMonth;
+    }
+
+    public boolean getIsPreviousMonth() {
+        return isPreviousMonth;
+    }
+
+    public void setIsNextMonth(boolean isNextMonth) {
+        this.isNextMonth = isNextMonth;
+    }
+
+    public boolean getIsNextMonth() {
+        return isNextMonth;
     }
 }
