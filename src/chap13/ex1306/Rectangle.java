@@ -2,10 +2,9 @@ package chap13.ex1306;
 
 import java.util.Arrays;
 
-public class Rectangle extends GeometricObject implements Comparable<GeometricObject> {
+public class Rectangle extends GeometricObject {
     private double width;
     private double height;
-    java.util.Date dateCreated;
 
     public Rectangle() {
         this(1, 1);
@@ -14,7 +13,6 @@ public class Rectangle extends GeometricObject implements Comparable<GeometricOb
     public Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
-        dateCreated = new java.util.Date();
     }
 
     public Rectangle(double width, double height, String color, boolean filled) {
@@ -28,6 +26,9 @@ public class Rectangle extends GeometricObject implements Comparable<GeometricOb
     }
 
     public void setSides(double[] sides) {
+        if (sides != null && sides.length == 2) {}
+        this.width = sides[0];
+        this.height = sides[1];
     }
 
     @Override
@@ -45,10 +46,5 @@ public class Rectangle extends GeometricObject implements Comparable<GeometricOb
         return this.getClass().getSimpleName()
                 + "\nSides: " + Arrays.toString(this.getSides())
                 + "\nCreated on " + dateCreated + "\ncolor: " + this.getColor() + " and filled: " + this.isFilled();
-    }
-
-    @Override
-    public int compareTo(GeometricObject o) {
-        return (Double.compare(this.getArea(), o.getArea()));
     }
 }

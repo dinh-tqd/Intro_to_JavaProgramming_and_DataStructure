@@ -1,6 +1,6 @@
 package chap13.ex1306;
 
-public class ComparableCircle extends Circle implements Comparable<ComparableCircle>{
+public class ComparableCircle extends Circle implements Comparable<GeometricObject>{
     public ComparableCircle(double radius) {
         super(radius);
     }

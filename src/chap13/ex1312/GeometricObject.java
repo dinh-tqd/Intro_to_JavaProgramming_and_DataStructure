@@ -1,4 +1,4 @@
-package chap13.ex1306;
+package chap13.ex1312;
 
 public abstract class GeometricObject {
     private String color;

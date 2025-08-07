@@ -11,7 +11,9 @@ public class Ex1304 {
     };
 
     public static void main(String[] args) {
-        final int TODAY = 23;
+        final int TODAY_DAY_OF_MONTH = 7;
+        final int TODAY_MONTH = 7;
+        final int TODAY_YEAR = 2025;
         // Input month and year
         int currentMonth = Integer.parseInt(args[0]) - 1;
         int currentYear = Integer.parseInt(args[1]);
@@ -51,7 +53,7 @@ public class Ex1304 {
         // Print current month's days
         int daysInMonth = currentMonthCal.getActualMaximum(Calendar.DAY_OF_MONTH);
         for (int day = 1; day <= daysInMonth; day++) {
-            if (day == TODAY) {
+            if (day == TODAY_DAY_OF_MONTH && currentMonth == TODAY_MONTH && currentYear == TODAY_YEAR) {
                 System.out.printf("%2s\033[30;47m%3d\033[0m", "", day);
             } else {
                 System.out.printf("%5d", day);
