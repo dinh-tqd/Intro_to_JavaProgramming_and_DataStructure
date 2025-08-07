@@ -1,0 +1,2 @@
+Các method getArea() và getPerimeter() có thể được bỏ khỏi class GeometricObject.
+Vậy thì định nghĩa các method này là abstract method trong class GeometricObject có lợi ích gì ?

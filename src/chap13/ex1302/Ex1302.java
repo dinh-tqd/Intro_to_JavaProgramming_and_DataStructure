@@ -17,13 +17,11 @@ public class Ex1302 {
         System.out.println(list);
         shuffle(list);
         System.out.println(list);
-
-
     }
 
     public static void shuffle(ArrayList<Number> list) {
         for (int i = list.size() - 1; i > 0; i--) {
-            int randomSwapIndex = (int)(Math.random() * i);
+            int randomSwapIndex = (int)(Math.random() * (i + 1));
 
             Number temp = list.get(i);
             list.set(i, list.get(randomSwapIndex));

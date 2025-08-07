@@ -1,23 +1,23 @@
-package chap13;
+package chap13.ex1304_advanced;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Ex1304 {
-    public static final int TODAY_DATE = 2;
-
+    public static final int TODAY_DATE = 1;
+    public static final int TODAY_MONTH = 7;
     public static void main(String[] args) {
 
 
         Calendar currentMonthCalendar = new GregorianCalendar();
         currentMonthCalendar.set(Calendar.YEAR, 2025);
-        currentMonthCalendar.set(Calendar.MONTH, 9);
+        currentMonthCalendar.set(Calendar.MONTH, TODAY_MONTH);
         currentMonthCalendar.set(Calendar.DAY_OF_MONTH, 1);
 
         Calendar previousMonthCalendar = new GregorianCalendar();
         previousMonthCalendar.set(Calendar.YEAR, 2025);
-        previousMonthCalendar.set(Calendar.MONTH, 8);
-        previousMonthCalendar.set(Calendar.DAY_OF_MONTH, 1);
+        previousMonthCalendar.set(Calendar.MONTH, TODAY_MONTH - 1);
+        previousMonthCalendar.set(Calendar.DAY_OF_MONTH, 2);
 
 
         String[] monthString = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
