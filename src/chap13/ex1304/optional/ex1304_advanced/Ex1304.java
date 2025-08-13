@@ -7,8 +7,6 @@ public class Ex1304 {
     public static final int TODAY_DATE = 1;
     public static final int TODAY_MONTH = 7;
     public static void main(String[] args) {
-
-
         Calendar currentMonthCalendar = new GregorianCalendar();
         currentMonthCalendar.set(Calendar.YEAR, 2025);
         currentMonthCalendar.set(Calendar.MONTH, TODAY_MONTH);
@@ -20,9 +18,9 @@ public class Ex1304 {
         previousMonthCalendar.set(Calendar.DAY_OF_MONTH, 2);
 
 
-        String[] monthString = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+        String[] MONTH_NAME = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
-        System.out.printf("        %s %d%n", monthString[currentMonthCalendar.get(Calendar.MONTH)], currentMonthCalendar.get(Calendar.YEAR));
+        System.out.printf("%s %d%n", MONTH_NAME[currentMonthCalendar.get(Calendar.MONTH)], currentMonthCalendar.get(Calendar.YEAR));
 
         for (int i = 0; i < 35; i++)
             System.out.print("-");
