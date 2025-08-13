@@ -40,7 +40,9 @@ public abstract class GeometricObject implements Comparable<GeometricObject>{
 
     public abstract double getArea();
     public abstract double getPerimeter();
-    public abstract int compareTo(GeometricObject o); // Abstract compareTo method
+    public int compareTo(GeometricObject o) {
+        return Double.compare(this.getArea(), o.getArea());
+    }
 
     public static GeometricObject max(GeometricObject o1, GeometricObject o2) {
         if (o1.getArea() >= o2.getArea()) {

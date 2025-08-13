@@ -41,9 +41,4 @@ public class Rectangle extends GeometricObject implements Comparable<GeometricOb
                 + "\nSides: " + Arrays.toString(this.getSides())
                 + "\nCreated on " + dateCreated + "\ncolor: " + this.getColor()  + " and filled: " + this.isFilled();
     }
-
-    @Override
-    public int compareTo(GeometricObject o) {
-        return (Double.compare(this.getArea(), o.getArea()));
-    }
 }
