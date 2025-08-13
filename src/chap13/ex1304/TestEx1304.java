@@ -23,7 +23,7 @@ public class TestEx1304 {
         // Case 4: 3 parameters
         System.out.println("Test with 10 2025 8");
         String[] args3Param = {"10", "2025", "8"};
-        Ex1304.main(argsNoParam);
+        Ex1304.main(args3Param);
         System.out.println("--------------------------------");
     }
 }
