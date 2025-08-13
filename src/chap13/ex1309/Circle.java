@@ -57,9 +57,8 @@ public class Circle extends GeometricObject implements Comparable<Circle> {
     public boolean equals(Object o) {
         if (this == o)
             return true;
-        else if (!(o instanceof Circle))
-            return false;
-        
-        return Double.compare(this.radius, ((Circle)o).radius) == 0;
+        if (o instanceof Circle)
+            return Double.compare(this.radius, ((Circle)o).radius) == 0;
+        return false;
     }
 }

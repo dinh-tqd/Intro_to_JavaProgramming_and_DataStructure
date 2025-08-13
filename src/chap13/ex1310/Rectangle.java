@@ -54,9 +54,11 @@ public class Rectangle extends GeometricObject implements Comparable<Rectangle> 
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof Rectangle) {
-            return this.getArea() == ((Rectangle) obj).getArea();
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o instanceof Rectangle) {
+            return this.getArea() == ((Rectangle) o).getArea();
         }
         return false;
     }
