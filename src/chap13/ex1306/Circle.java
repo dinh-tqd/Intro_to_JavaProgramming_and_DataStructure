@@ -3,6 +3,8 @@ package chap13.ex1306;
 public class Circle extends GeometricObject{
     private double radius;
 
+    Circle() {}
+
     Circle(double radius) {
         this.radius = radius;
     }
