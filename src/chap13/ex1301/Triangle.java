@@ -1,9 +1,9 @@
 package chap13.ex1301;
 
 public class Triangle extends GeometricObject {
-    double side1;
-    double side2;
-    double side3;
+    private double side1;
+    private double side2;
+    private double side3;
 
     public Triangle() {
     }
