@@ -1,4 +1,4 @@
-package chap13.ex1304_advanced_finalFix;
+package chap13.ex1304.optional.ex1304_advanced_finalFix;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -11,8 +11,8 @@ public class Ex1304 {
     };
 
     public static void main(String[] args) {
-        final int TODAY_DAY_OF_MONTH = 7;
-        final int TODAY_MONTH = 7;
+        final int TODAY_DAY_OF_MONTH = 13;
+        final int TODAY_MONTH = Calendar.AUGUST;
         final int TODAY_YEAR = 2025;
         // Input month and year
         int currentMonth = Integer.parseInt(args[0]) - 1;

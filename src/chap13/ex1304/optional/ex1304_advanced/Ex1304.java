@@ -1,4 +1,4 @@
-package chap13.ex1304_advanced;
+package chap13.ex1304.optional.ex1304_advanced;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
