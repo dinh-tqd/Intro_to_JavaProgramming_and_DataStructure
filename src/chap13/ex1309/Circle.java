@@ -55,11 +55,11 @@ public class Circle extends GeometricObject implements Comparable<Circle> {
 
     @Override
     public boolean equals(Object o) {
-        if (o instanceof Circle) {
-            return Double.compare(this.radius, ((Circle)o).radius) == 0;
-        }
-        else  {
+        if (this == o)
+            return true;
+        else if (!(o instanceof Circle))
             return false;
-        }
+        
+        return Double.compare(this.radius, ((Circle)o).radius) == 0;
     }
 }
