@@ -5,17 +5,17 @@ import java.util.Scanner;
 
 public class Ex1316 {
     public static void main(String[] args) {
-//        System.out.println(args[0]);
-//        System.out.println(args[1]);
-//        System.out.println(args[2]);
 
-        String[] r1 = args[0].split("/");
+        String inputString = args[0];
+        String[] inputArray = inputString.split(" ");
+
+        String[] r1 = inputArray[0].split("/");
         Rational r1Num = new Rational(Integer.parseInt(r1[0]), Integer.parseInt(r1[1]));
-        String[] r2 = args[2].split("/");
+        String[] r2 = inputArray[2].split("/");
         Rational r2Num = new Rational(Integer.parseInt(r2[0]), Integer.parseInt(r2[1]));
 
         Rational result = new Rational();
-        String operator = args[1];
+        String operator = inputArray[1];
 
         switch (operator) {
             case "+":
@@ -30,8 +30,9 @@ public class Ex1316 {
             case "/":
                 result = r1Num.divide(r2Num);
                 break;
+
         }
 
-        System.out.println(r1Num + " " + args[1] + " " + r2Num + " = " + result);
+        System.out.println(r1Num + " " + inputArray[1] + " " + r2Num + " = " + result);
     }
 }
