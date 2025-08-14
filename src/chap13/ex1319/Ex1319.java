@@ -8,13 +8,22 @@ public class Ex1319 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        String inputNumber = input.nextLine();
+        System.out.println("Enter your decimal number: ");
+        String inputNumber = input.nextLine().trim();
+
         StringBuilder intPart =  new StringBuilder();
         StringBuilder fractionalPart = new StringBuilder();
         int decimalPointLocation = -1;
 
+        boolean isNegative = false;
+        if (inputNumber.charAt(0) == '-') {
+            isNegative = true;
+        }
+
         for (int i = 0; i < inputNumber.length(); i++) {
-            if (decimalPointLocation == -1 && inputNumber.charAt(i) != '.') {
+            if (inputNumber.charAt(i) == '-') {
+                continue;
+            } else if (decimalPointLocation == -1 && inputNumber.charAt(i) != '.') {
                 intPart.append(inputNumber.charAt(i));
             } else if (inputNumber.charAt(i) == '.') {
                 decimalPointLocation = i;
@@ -23,25 +32,30 @@ public class Ex1319 {
             }
         }
 
-        System.out.println(intPart);
-        System.out.println(fractionalPart);
-        System.out.println(fractionalPart.length());
+        if (intPart.length() == 0) {
+            intPart.append("0");
+        }
+
+        if (fractionalPart.length() == 0) {
+            fractionalPart.append("0");
+        }
+
+//        System.out.println("Int part: " + intPart);
+//        System.out.println("Fractional part: " + fractionalPart);
+//        System.out.println("Number count in fractional part: " + fractionalPart.length());
 
         Rational r1 = new Rational(new BigInteger(intPart.toString()), BigInteger.ONE);
         Rational r2 = new Rational(new BigInteger(fractionalPart.toString()), BigInteger.TEN.pow(fractionalPart.length()));
-        System.out.println(r1.add(r2));
+        Rational r = r1.add(r2);
+
+        Rational result;
+        if (!isNegative)
+            result = r;
+        else {
+            result = new Rational(r.getNumerator().negate(), r.getDenominator());
+        }
+
+        System.out.println("The fraction number is : " + result);
+        System.out.println("Decimal value : " + result.doubleValue());
     }
 }
-
-/*
-  Code này chưa :
-  1. Kiểm tra input:
-  Chuỗi rỗng, chỉ chứa dấu chấm, hoặc dấu âm với chấm
-  Kiểm tra các kí tự không phải số
-
-  2. Hỗ trợ số âm
-
-  3. Xử lí trường hợp đặc biệt:
-  Không có phân nguyên (Ví dụ: ".123456")
-  Không có phần thập phân (Ví dụ: "12345")
- */

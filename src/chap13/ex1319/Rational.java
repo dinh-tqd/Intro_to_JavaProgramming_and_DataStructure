@@ -2,7 +2,7 @@ package chap13.ex1319;
 
 import java.math.BigInteger;
 
-public class Rational extends Number implements Comparable<Rational>{
+public class Rational extends Number implements Comparable<Rational>, Cloneable{
     private BigInteger numerator;
     private BigInteger denominator;
 
@@ -99,5 +99,10 @@ public class Rational extends Number implements Comparable<Rational>{
     @Override
     public int compareTo(Rational o) {
         return this.subtract(o).getNumerator().compareTo(BigInteger.ZERO);
+    }
+
+    @Override
+    public Rational clone() {
+        return new Rational(this.numerator, this.denominator);
     }
 }
