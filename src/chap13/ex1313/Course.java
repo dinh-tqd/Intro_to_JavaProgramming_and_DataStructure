@@ -30,11 +30,16 @@ public class Course implements Cloneable{
     // Left as an exercise in Exercise 9.9
   }
 
+  @Override
   public Course clone() {
+    try {
       Course c = new Course(courseName);
       for (int i = 0; i < numberOfStudents; i++) {
         c.addStudent(students[i]);
       }
       return c;
+    } catch (Exception e) {
+      throw new RuntimeException("Uncloneable !");
+    }
   }
 }
