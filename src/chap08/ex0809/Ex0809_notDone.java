@@ -1,4 +1,4 @@
-package chap08;
+package chap08.ex0809;
 import java.util.Scanner;
 
 public class Ex0809_notDone {

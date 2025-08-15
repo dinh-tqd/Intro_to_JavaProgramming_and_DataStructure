@@ -1,4 +1,4 @@
-package chap08;
+package chap08.ex0801;
 
 public class Ex0801 {
     public static void main(String[] args) {

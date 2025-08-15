@@ -1,5 +1,5 @@
 
-package chap08;
+package chap08.ex0804;
 import java.util.Arrays;
 
 public class Ex0804 {
@@ -26,7 +26,7 @@ public class Ex0804 {
         // Sort
         for (int i = 0; i < employeesAndHoursTotal.length; i++) {
             for (int j = i + 1; j < employeesAndHoursTotal.length; j++) {
-                if (employeesAndHoursTotal[i][1] > employeesAndHoursTotal[j][1]) {
+                if (employeesAndHoursTotal[i][1] < employeesAndHoursTotal[j][1]) {
                     int[] temp = employeesAndHoursTotal[i];
                     employeesAndHoursTotal[i] = employeesAndHoursTotal[j];
                     employeesAndHoursTotal[j] = temp;
