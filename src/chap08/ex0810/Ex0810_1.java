@@ -1,7 +1,7 @@
-package chap08;
+package chap08.ex0810;
 import java.util.Arrays;
 
-public class Ex0810 {
+public class Ex0810_1 {
     public static void main(String[] args) {
         int[][] matrix = new int[4][4];
 

@@ -1,4 +1,4 @@
-package chap08;
+package chap08.ex0811;
 
 import java.util.Scanner;
 

@@ -22,7 +22,7 @@ public class Ex0809 {
         while (!isGameWon(grid)) {
             playerTurn(turn % 2);
             printBoard(grid);
-            System.out.println(isGameWon(grid));
+
             System.out.print("\n---\n");
             turn++;
         }
@@ -84,36 +84,42 @@ public class Ex0809 {
         for (int r = 0; r < grid.length; r++) {
             int aCount = 0;
             for (int c = 0; c < grid[0].length; c++) {
-                if (grid[r][0] != '_' && grid[r][c] == grid[r][0]) {
+                if (grid[r][0] != charForEmptySquare && grid[r][c] == grid[r][0]) {
                     aCount++;
                 }
             }
 
-            if (aCount == grid.length)
+            if (aCount == grid.length) {
+                System.out.print("Player " + grid[r][0] + " won!");
                 return true;
+            }
         }
 
         // Check Column
         for (int c = 0; c < grid[0].length; c++) {
             int bCount = 0;
             for (int r = 0; r < grid.length; r++) {
-                if (grid[0][c] != '_' && grid[r][c] == grid[0][c]) {
+                if (grid[0][c] != charForEmptySquare && grid[r][c] == grid[0][c]) {
                     bCount++;
                 }
             }
 
-            if (bCount == grid.length)
+            if (bCount == grid.length) {
+                System.out.print("Player " + grid[0][c] + " won!");
                 return true;
+            }
         }
 
         // Check major diagonal
         int cCount = 0;
         for (int r = 0; r < grid.length; r++) {
-            if (grid[0][0] != '_' && grid[r][r] == grid[0][0]) {
+            if (grid[0][0] != charForEmptySquare && grid[r][r] == grid[0][0]) {
                 cCount++;
             }
-            if (cCount == grid.length)
+            if (cCount == grid.length) {
+                System.out.print("Player " + grid[0][0] + " won!");
                 return true;
+            }
         }
 
 
@@ -121,11 +127,13 @@ public class Ex0809 {
         int dCount = 0;
         for (int r = 0; r < grid.length; r++) {
             int c = grid[0].length - 1 - r;
-            if (grid[0][grid[0].length - 1] != '_' && grid[r][c] == grid[0][grid[0].length - 1]) {
+            if (grid[0][grid[0].length - 1] != charForEmptySquare && grid[r][c] == grid[0][grid[0].length - 1]) {
                 dCount++;
             }
-            if (dCount == grid.length)
+            if (dCount == grid.length) {
+                System.out.print("Player " + grid[0][grid[0].length - 1] + " won!");
                 return true;
+            }
         }
 
 
