@@ -1,7 +1,7 @@
-package chap08;
+package chap08.ex0814;
 
-import java.util.Scanner;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Ex0814 {
     public static void main(String[] args) {
