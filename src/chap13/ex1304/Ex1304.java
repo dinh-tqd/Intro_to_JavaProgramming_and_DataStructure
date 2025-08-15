@@ -7,18 +7,20 @@ import java.util.GregorianCalendar;
 
 public class Ex1304 {
     public static void main(String[] args) {
+
+
         Calendar cal = new GregorianCalendar();
 
-        int month = cal.get(Calendar.MONTH) + 1;
-        int year = cal.get(Calendar.YEAR);
+        int yearToPrint = cal.get(Calendar.YEAR);
+        int monthToPrint = cal.get(Calendar.MONTH) + 1;
 
         if (args.length == 0) {
             // No change
         } else if (args.length == 1) {
-            month = Integer.parseInt(args[0]);
+            monthToPrint = Integer.parseInt(args[0]);
         } else if (args.length == 2) {
-            month = Integer.parseInt(args[0]);
-            year = Integer.parseInt(args[1]);
+            monthToPrint = Integer.parseInt(args[0]);
+            yearToPrint = Integer.parseInt(args[1]);
         } else {
             System.out.println("Invalid argument.");
             System.out.println("Format should be: ");
@@ -30,8 +32,8 @@ public class Ex1304 {
             System.exit(1);
         }
 
-        cal.set(Calendar.YEAR, year);
-        cal.set(Calendar.MONTH, month - 1);
+        cal.set(Calendar.YEAR, yearToPrint);
+        cal.set(Calendar.MONTH, monthToPrint - 1);
         cal.set(Calendar.DAY_OF_MONTH, 1);
 
         String[] MONTH_NAME = {
