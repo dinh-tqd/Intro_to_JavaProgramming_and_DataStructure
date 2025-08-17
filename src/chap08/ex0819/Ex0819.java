@@ -1,4 +1,4 @@
-package chap08;
+package chap08.ex0819;
 
 public class Ex0819 {
     public static void main(String[] args) {
@@ -58,8 +58,8 @@ public class Ex0819 {
         for (int r = 0; r < values.length; r++) {
             for (int c = 0; c + 3 < values[0].length; c++) {
                 boolean match = true;
-                for (int c1 = c + 1; c1 <= c + 3; c1++) {
-                    if (values[r][c1] != values[r][c]) {
+                for (int x = 1; x <= 3; x++) {
+                    if (values[r][c + x] != values[r][c]) {
                         match = false;
                         break;
                     }
@@ -74,8 +74,8 @@ public class Ex0819 {
         for (int c = 0; c < values[0].length; c++) {
             for (int r = 0; r + 3 < values.length; r++) {
                 boolean match = true;
-                for (int r1 = r + 1; r1 <= r + 3; r1++) {
-                    if (values[r1][c] != values[r][c]) {
+                for (int x = 1; x <= 3; x++) {
+                    if (values[r + x][c] != values[r][c]) {
                         match = false;
                         break;
                     }
@@ -90,8 +90,8 @@ public class Ex0819 {
         for (int r = values.length - 1; r >= 3; r-- ) {
             for (int c = 0; c + 3 < values[0].length; c++) {
                 boolean match = true;
-                for (int c1 = c + 1, r1 = r - 1; c1 <= c + 3; c1++, r1--) {
-                    if (values[r1][c1] != values[r][c]) {
+                for (int x = 1; x <= 3; x++) {
+                    if (values[r - x][c + x] != values[r][c]) {
                         match = false;
                         break;
                     }
@@ -106,8 +106,8 @@ public class Ex0819 {
         for (int r = 0; r + 3 < values.length; r++) {
             for (int c = 0; c + 3 < values[0].length; c++) {
                 boolean match = true;
-                for (int r1 = r + 1, c1 = c + 1; r1 <= r + 3; r1++, c1++) {
-                    if (values[r1][c1] != values[r][c]) {
+                for (int x = 1; x <= 3; x++) {
+                    if (values[r + x][c + x] != values[r][c]) {
                         match = false;
                         break;
                     }
@@ -118,5 +118,3 @@ public class Ex0819 {
         return false;
     }
 }
-
-// Code hơi xấu ...
