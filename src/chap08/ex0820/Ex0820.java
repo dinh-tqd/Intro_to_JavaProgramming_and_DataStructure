@@ -1,4 +1,4 @@
-package chap08;
+package chap08.ex0820;
 
 import java.util.Scanner;
 import java.util.Arrays;

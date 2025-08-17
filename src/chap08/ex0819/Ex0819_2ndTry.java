@@ -1,6 +1,6 @@
 package chap08.ex0819;
 
-public class Ex0819_2 {
+public class Ex0819_2ndTry {
     public static void main(String[] args) {
 //        Test case 1: row test.
 //        int[][] values = {
