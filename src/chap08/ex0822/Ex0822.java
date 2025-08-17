@@ -1,4 +1,4 @@
-package chap08;
+package chap08.ex0822;
 
 import java.util.Arrays;
 
